@@ -1,0 +1,37 @@
+body {
+  margin: 0;
+}
+
+.mt-0{
+  margin-top: 0;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.float-left {
+  float: left;
+}
+
+label {
+  font-size: 14px;
+  padding-bottom: 5px;
+  position: relative;
+}
+
+.delicacy-btn, .delicacy-btn:hover {
+  padding: 9px 9px;
+  font-size: 18px;
+  font-weight: 700;
+  width: 100%;
+  border-radius: 5px;
+  background-color: #5A1DDA;
+  border-color: #5A1DDA;
+  color: #fff;
+  cursor: pointer;
+}
