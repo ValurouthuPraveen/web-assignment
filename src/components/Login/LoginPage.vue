@@ -2,7 +2,7 @@
   <div class="page-wrapper d-flex align-items-center justify-content-center">
     <div class="col-xs-12">
       <div class="login-whitebox">
-        <form>
+        <form @submit.prevent="loginUser">
           <h3 class="welcome-msg">Welcome to Gujarat Delicacies!!!</h3>
           <div class="login-container">
             <label class="float-left asterisk">Email</label>
@@ -10,7 +10,19 @@
               type="text"
               placeholder="Enter Email"
               class="input-field"
+              v-model.trim="userData.email"
+              @blur="$v.userData.email.$touch()"
             />
+            <div v-if="$v.userData.email.$error">
+              <div
+                class="custom-error-class"
+                v-if="!$v.userData.email.required"
+              >Please enter email</div>
+              <div
+                class="custom-error-class"
+                v-if="!$v.userData.email.email"
+              >Please enter valid email</div>
+            </div>
           </div>
           <div class="login-container">
             <label class="float-left asterisk">Password</label>
@@ -18,10 +30,22 @@
               type="password"
               placeholder="Enter password"
               class="input-field"
+              v-model.trim="userData.password"
+              @blur="$v.userData.password.$touch()"
             />
+            <div v-if="$v.userData.password.$error">
+              <div
+                class="custom-error-class"
+                v-if="!$v.userData.password.required"
+              >Please enter password</div>
+              <div
+                class="custom-error-class"
+                v-if="!$v.userData.password.minLength"
+              >Password should contain minimum 6 characters</div>
+            </div>
           </div>
           <div class="login-btn-container">
-            <button type="button" class="delicacy-btn" @click="loginUser">Log in</button>
+            <button type="submit" :disabled="disableSubmit" class="delicacy-btn">Log in</button>
           </div>
         </form>
       </div>
@@ -30,14 +54,33 @@
 </template>
 
 <script>
+import { validateData } from './validator';
+
 export default {
   name: 'LoginPage',
   data() {
     return {
+      userData: {
+        email: '',
+        password: '',
+      },
     };
+  },
+  validations: {
+    userData: validateData,
+  },
+  computed: {
+    disableSubmit() {
+      if (!this.$v.userData.$error) {
+        return false;
+      }
+      return true;
+    },
   },
   methods: {
     loginUser() {
+      this.$v.$touch();
+      console.log('userDAta: ', this.userData);
       this.$router.push({ name: 'DashboardPage' });
     },
   },
@@ -92,5 +135,16 @@ export default {
 }
 .login-btn-container {
   padding: 40px 30px;
+}
+.delicacy-btn[disabled] {
+  opacity: 1;
+  cursor: not-allowed;
+}
+.custom-error-class {
+  color: #B00505;
+  text-align: center;
+  background-color: rgba(176, 5, 5, 0.1);
+  padding: 2px 0px;
+  font-size: 14px;
 }
 </style>
