@@ -91,7 +91,7 @@ export default {
   },
   computed: {
     disableSubmit() {
-      if (!this.$v.userData.$error) {
+      if (!this.$v.userData.$invalid) {
         return false;
       }
       return true;
