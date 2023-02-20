@@ -1,44 +1,50 @@
 [
   {
-    "id": 1,
-    "image": "Dhokla.jpg",
+    "id": 0,
+    "image": "/static/images/logos/Dhokla.jpg",
     "name": "Dhokla",
     "description": "Dhokla is a savoury sponge dish that is native to the Indian state of Gujarat and parts of adjacent states, and is popular throughout the country.",
-    "price": 119
+    "price": 119,
+    "quantity": 0
+  },
+  {
+    "id": 1,
+    "image": "/static/images/logos/Fafda Jalebi.jpg",
+    "name": "Fafda Jalebi",
+    "description": "Fafda are spicy and crunchy which is made of chickpea consists of long strips of dough which have been deep fried and Jalebi are sweet, tangy and soft fried sweet dipped in sugar.",
+    "price": 219,
+    "quantity": 0
   },
   {
     "id": 2,
-    "image": "Fafda Jalebi.jpg",
-    "name": "Fafda Jalebi",
-    "description": "Fafda are spicy and crunchy which is made of chickpea consists of long strips of dough which have been deep fried and Jalebi are sweet, tangy and soft fried sweet dipped in sugar.",
-    "price": 219
+    "image": "/static/images/logos/Methi muthia.jpg",
+    "name": "Methi Muthia",
+    "description": "Methi muthia are fist-shaped deep fried snacks made from dough of whole wheat flour and besan flavoured excitingly with methi, sugar and spices.",
+    "price": 99,
+    "quantity": 0
   },
   {
     "id": 3,
-    "image": "Methi muthia.jpg",
-    "name": "Methi Muthia",
-    "description": "Methi muthia are fist-shaped deep fried snacks made from dough of whole wheat flour and besan flavoured excitingly with methi, sugar and spices.",
-    "price": 99
+    "image": "/static/images/logos/Muthiya.jpg",
+    "name": "Muthiya",
+    "description": "The name is derived from the way it is made, from the 'gripping' action of the hand. It is a vegetarian dish",
+    "price": 89,
+    "quantity": 0
   },
   {
     "id": 4,
-    "image": "Muthiya.jpg",
-    "name": "Muthiya",
-    "description": "The name is derived from the way it is made, from the 'gripping' action of the hand. It is a vegetarian dish",
-    "price": 89
+    "image": "/static/images/logos/Khandvi.webp",
+    "name": "Khandvi",
+    "description": " It is a famous savory snack in Gujarati cuisine. It is prepared using gram flour and yogurt tightly rolled into bite-sized pieces.",
+    "price": 99,
+    "quantity": 0
   },
   {
     "id": 5,
-    "image": "Khandvi.webp",
-    "name": "Khandvi",
-    "description": " It is a famous savory snack in Gujarati cuisine. It is prepared using gram flour and yogurt tightly rolled into bite-sized pieces.",
-    "price": 99
-  },
-  {
-    "id": 6,
-    "image": "Thepla.jpg",
+    "image": "/static/images/logos/Thepla.jpg",
     "name": "Thepla",
     "description": "Theplas are famous for breakfast in Gujarat. Every household in Gujarat start their day with hot theplas accompanied with jalebi and fafda.",
-    "price": 129
+    "price": 129,
+    "quantity": 0
   }
 ]

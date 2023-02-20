@@ -33,5 +33,31 @@ label {
   background-color: #5A1DDA;
   border-color: #5A1DDA;
   color: #fff;
+  cursor: default;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.cursor-pointer {
   cursor: pointer;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.m-0 {
+  margin: 0;
 }

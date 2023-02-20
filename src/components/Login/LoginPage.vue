@@ -3,7 +3,11 @@
     <div class="col-xs-12">
       <div class="login-whitebox">
         <form @submit.prevent="loginUser">
-          <h3 class="welcome-msg">Welcome to Gujarat Delicacies!!!</h3>
+          <h3
+            class="welcome-msg"
+          >
+            Welcome to Gujarat Delicacies!!!
+          </h3>
           <div class="login-container">
             <label class="float-left asterisk">Email</label>
             <input
@@ -12,16 +16,20 @@
               class="input-field"
               v-model.trim="userData.email"
               @blur="$v.userData.email.$touch()"
-            />
+            >
             <div v-if="$v.userData.email.$error">
               <div
                 class="custom-error-class"
                 v-if="!$v.userData.email.required"
-              >Please enter email</div>
+              >
+                Please enter email
+              </div>
               <div
                 class="custom-error-class"
                 v-if="!$v.userData.email.email"
-              >Please enter valid email</div>
+              >
+                Please enter valid email
+              </div>
             </div>
           </div>
           <div class="login-container">
@@ -32,20 +40,30 @@
               class="input-field"
               v-model.trim="userData.password"
               @blur="$v.userData.password.$touch()"
-            />
+            >
             <div v-if="$v.userData.password.$error">
               <div
                 class="custom-error-class"
                 v-if="!$v.userData.password.required"
-              >Please enter password</div>
+              >
+                Please enter password
+              </div>
               <div
                 class="custom-error-class"
                 v-if="!$v.userData.password.minLength"
-              >Password should contain minimum 6 characters</div>
+              >
+                Password should contain minimum 6 characters
+              </div>
             </div>
           </div>
           <div class="login-btn-container">
-            <button type="submit" :disabled="disableSubmit" class="delicacy-btn">Log in</button>
+            <button
+              type="submit"
+              :disabled="disableSubmit"
+              class="delicacy-btn"
+            >
+              Log In
+            </button>
           </div>
         </form>
       </div>
@@ -55,6 +73,8 @@
 
 <script>
 import { validateData } from './validator';
+import setDataToSessionStorage from '@/utils/setDataToSessionStorage';
+import delicacies from '../../../public/static/data/delicacies.json';
 
 export default {
   name: 'LoginPage',
@@ -79,8 +99,8 @@ export default {
   },
   methods: {
     loginUser() {
-      this.$v.$touch();
-      console.log('userDAta: ', this.userData);
+      setDataToSessionStorage('userData', JSON.stringify(this.userData));
+      setDataToSessionStorage('delicacies', JSON.stringify(delicacies));
       this.$router.push({ name: 'DashboardPage' });
     },
   },
